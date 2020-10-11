@@ -53,4 +53,28 @@ class ArraySorter
         return $a;
     }
 
+    /**
+     * Пузырьковая сортировка
+     * Функция сортирует массив по возрастанию
+     * @param array $a
+     * @return array
+     */
+    public function bubbleSort(array $a)
+    {
+        $n = count($a);
+
+        for ($i = 1; $i < $n; $i++) {
+            for ($j = 0; $j < $n - $i; $j++) {
+                if ($a[$j] > $a[$j+1]) {
+                    $tmp = $a[$j];
+                    $a[$j] = $a[$j+1];
+                    $a[$j+1] = $tmp;
+                    unset($tmp); 
+                }
+            }
+        }
+
+        return $a;
+    }
+
 }
